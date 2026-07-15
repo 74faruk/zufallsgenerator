@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Zufallsgenerator</title>
+<meta name="description" content="Würfel, Münzwurf und Zufallsauswahl aus einer eigenen Liste.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎲</text></svg>">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="app-header">
+      <h1>🎲 Zufallsgenerator</h1>
+      <p class="subtitle">Würfeln, Münze werfen oder aus deiner Liste losen.</p>
+    </header>
+
+    <section class="tabs" role="tablist">
+      <button class="tab-btn active" data-tab="dice">Würfel</button>
+      <button class="tab-btn" data-tab="coin">Münze</button>
+      <button class="tab-btn" data-tab="picker">Liste</button>
+    </section>
+
+    <!-- Würfel -->
+    <section class="panel" id="panel-dice">
+      <label class="count-label">
+        Anzahl Würfel: <strong id="diceCountLabel">2</strong>
+        <input type="range" id="diceCount" min="1" max="6" value="2">
+      </label>
+      <div class="dice-row" id="diceRow"></div>
+      <p class="sum-text" id="diceSum"></p>
+      <button class="btn-primary" id="rollDiceBtn">Würfeln</button>
+    </section>
+
+    <!-- Münze -->
+    <section class="panel" id="panel-coin" hidden>
+      <div class="coin" id="coin">🪙</div>
+      <p class="coin-result" id="coinResult">Klick, um zu werfen</p>
+      <p class="coin-stats" id="coinStats"></p>
+      <button class="btn-primary" id="flipCoinBtn">Münze werfen</button>
+    </section>
+
+    <!-- Liste -->
+    <section class="panel" id="panel-picker" hidden>
+      <textarea id="pickerList" rows="5" placeholder="Eine Option pro Zeile …">Pizza
+Sushi
+Döner
+Pasta</textarea>
+      <p class="picker-result" id="pickerResult"></p>
+      <button class="btn-primary" id="pickBtn">Zufällig wählen</button>
+    </section>
+
+    <footer class="app-footer">
+      <a href="https://74faruk.github.io" target="_blank" rel="noopener">← Zurück zum Portfolio</a>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
